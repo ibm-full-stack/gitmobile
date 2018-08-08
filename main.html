@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>feed</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!--font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/feed.css">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.getJSON("feed.json", function (data) {
+                $.each(data, function (i, obj) {
+                    $("#notif").append("<p style='margin: 10px;'><b>" + obj.uname + "</b> starred <b>" + obj.starred + "</b><hr></p>");
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<nav class="navbar" style="background-color: darkgray; position: fixed; width: 100%;">
+    <i class="fa fa-bars fa-2x icon" style=" margin: 10px; float: left;" onclick="openNav()">&nbsp;&nbsp;GitMobile</i>
+    <a href="notifications.html icon"><i class="fa fa-bell fa-2x"></i></a>
+    <i class="fa fa-search fa-2x icon" style="float: right"></i>
+</nav>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <img src="img/profile.png" style="width: 50px; height: 50px; margin: 10px 10px 10px 15px; border-radius: 50%;">
+    <span style="font-size: 25px; color: white; margin: 10px;">manankalra</span><br>
+    <i class="fa fa-home fa-2x icon" aria-hidden="true"></i><a href="#" onclick="closeNav()" style="width: 90%; float: right;">Home</a>
+    <hr>
+    <i class="fa fa-user-circle fa-2x icon" aria-hidden="true"></i><a href="#"">Profile</a>
+    <i class="fa fa-users fa-2x icon" aria-hidden="true"></i><a href="#">Organizations</a>
+    <i class="fa fa-bell fa-2x icon" aria-hidden="true"></i><a href="#">Notifications</a>
+    <hr>
+    <i class="fa fa-bookmark fa-2x icon" aria-hidden="true"></i><a href="#">Pinned </a>
+    <i class="fa fa-line-chart fa-2x icon" aria-hidden="true"></i><a href="#">Trending</a>
+    <i class="fa fa-cog fa-2x icon" aria-hidden="true"></i><a href="#">Gists</a>
+    <hr>
+    <i class="fa fa-bug fa-2x icon" aria-hidden="true"></i><a href="#">Report an Issue</a>
+    <i class="fa fa-exclamation-circle fa-2x icon" aria-hidden="true"></i><a href="#">FAQ</a>
+    <i class="fa fa-align-left fa-2x icon" aria-hidden="true"></i><a href="#">Settings</a>
+    <i class="fa fa-address-card fa-2x icon" aria-hidden="true"></i><a href="#">About Us</a>
+</div>
+<div id="notif">
+</div>
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
+</script>
+
+<div class="navbar" style="background-color: darkgray; position: fixed; bottom: 0; width: 100%;">
+    <i class="fa fa-bug fa-2x icon" style="width: 33%;"></i>
+    <i class="fa fa-globe fa-2x icon" style="width: 33%;"></i>
+    <i class="fa fa-code-fork fa-2x icon" style="width: 33%;"></i>
+</div>
+</body>
+</html>

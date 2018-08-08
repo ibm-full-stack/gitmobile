@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign-In</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!--font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--jQuery UI-->
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+
+    <!--<link rel="stylesheet" href="css/custom-theme/jquery-ui-1.10.0.custom.css">-->
+
+    <link rel="stylesheet" href="css/signin.css">
+
+    <script src="js/signin.js"></script>
+</head>
+<body style="background-color: lightgray;">
+
+<nav class="navbar" style="color: white; background-color: darkgray;">
+    GitMobile
+</nav>
+
+<div class="container container-fluid">
+    <div class="card" id="card">
+        <div class="card-header">
+            <center><img id="logo-gitmobile" src="img/logo_gitmobile.png"></center>
+            <br>
+            <center><b>GitHub in your pocket!</b></center>
+        </div>
+        <div class="card-body">
+            <form onsubmit="return validate_username()" action="signin_pass.html">
+                <div class="form-group">
+                    <label for="userinput">Username:</label>
+                    <input type="text" class="form-control" id="userinput" placeholder="Enter username">
+                </div>
+                <!-- Remember username
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" name="remember"> Remember username
+                    </label>
+                </div>
+                -->
+                <br>
+                <center>
+                    <button type="submit" id="proceed">
+                        <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true"></i>
+                    </button>
+                </center>
+                <br></form>
+            <center><span>or<br>Login with:<br></span></center>
+            <div id="images">
+                <div id="images1" style="float: left;" class="card">
+                    <div class="card-header">
+                        <center><a href="http://gitlab.com/"><img class="logo" src="img/logo_gitlab.png"></a>
+                        </center>
+                    </div>
+                    <div class="card-footer">
+                        <center>GitLab</center>
+                    </div>
+                </div>
+                <div id="images2" style="float: right;" class="card">
+                    <div class="card-header">
+                        <center><a href="https://openhub.net/"><img class="logo" src="img/logo_openhub.png"></a>
+                        </center>
+                    </div>
+                    <div class="card-footer">
+                        <center>OpenHub</center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <center><span>Don't have an account?</span>&nbsp;&nbsp;<a href="signup.html">
+                <button class="btn btn-primary">Sign Up</button>
+            </a></center>
+        </div>
+    </div>
+</div>
+<script src="js/signin.js"></script>
+</div>
+
+</body>
+</html>
